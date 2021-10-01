@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	char n;
+	int n;
 
 	n = 48;
 	while (n < 58)
