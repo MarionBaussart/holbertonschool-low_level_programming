@@ -14,17 +14,14 @@ int main(void)
 	n = 48;
 	while (n < 58)
 	{
+		putchar(n);
 		if (n < 57)
 		{
-			putchar(n);
 			putchar(',');
 			putchar(' ');
 		}
-		else
-		{
-			putchar(n);
-		}
 		n++;
 	}
+	putchar('\n');
 	return (0);
 }
