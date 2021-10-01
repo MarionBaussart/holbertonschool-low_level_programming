@@ -19,10 +19,6 @@ int main(void)
 		{
 			putchar(abc);
 		}
-		else
-		{
-			abc++;
-		}
 		abc++;
 	}
 	putchar('\n');
