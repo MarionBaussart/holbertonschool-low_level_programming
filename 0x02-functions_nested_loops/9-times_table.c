@@ -16,8 +16,13 @@ void times_table(void)
 			num = i * j;
 			dnum = (num / 10) + 48;
 			unum = (num % 10) + 48;
-			if (dnum == 48)
+			if (j == 0)
 			{
+				_putchar(unum);
+			}
+			else if (dnum == 48)
+			{
+				_putchar(' ');
 				_putchar(unum);
 			}
 			else
