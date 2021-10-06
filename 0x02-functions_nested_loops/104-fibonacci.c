@@ -22,7 +22,7 @@ int main(void)
 			b = n;
 			printf(", %lu", n);
 		}
-		else
+		else if (n >= 10000000000)
 		{
 			n1 = ((a1 + b1) / 10000000000);
 			n2 = ((a2 + b2) % 10000000000);
@@ -35,6 +35,8 @@ int main(void)
 				n3 = n2 / 10000000000;
 				printf(", %lu", (n1 + 1)), printf("%lu", n3);
 			}
+			else
+				printf(", %lu", n1), printf("%lu", n2);
 		}
 		i++;
 	}
