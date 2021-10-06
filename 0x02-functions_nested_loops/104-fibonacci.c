@@ -28,6 +28,8 @@ int main(void)
 	{
 		n1 = a1 + b1;
 		n2 = a2 + b2;
+		a1 = b1, a2 = b2;
+		b1 = n1, b2 = n2;
 		if (n2 >= 10000000000)
 		{
 			n3 = n2 % 1000000000;
@@ -35,8 +37,6 @@ int main(void)
 		}
 		else
 			printf(", %lu", n1), printf("%lu", n2);
-		a1 = b1, a2 = b2;
-		b1 = n1, b2 = n2;
 		i++;
 	}
 	printf("\n");
