@@ -6,9 +6,9 @@
  */
 void print_number(int n)
 {
-	int nbc = 0;
-	int num = n;
-	int i = 1;
+	unsigned int nbc = 0;
+	unsigned int num = n;
+	unsigned int i = 1;
 
 	if (n == 0)
 	{
