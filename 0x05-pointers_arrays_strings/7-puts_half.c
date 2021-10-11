@@ -19,7 +19,7 @@ void puts_half(char *str)
 	}
 	else
 	{
-		i = (nbchar - 1) / 2;
+		i = ((nbchar - 1) / 2) + 1;
 	}
 	if (nbchar != 0)
 	{
