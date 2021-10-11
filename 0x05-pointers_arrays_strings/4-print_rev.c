@@ -23,4 +23,6 @@ void print_rev(char *s)
 		}
 		_putchar('\n');
 	}
+	else
+		_putchar('\n');
 }
