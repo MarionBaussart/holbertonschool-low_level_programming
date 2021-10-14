@@ -39,38 +39,24 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
  * counting size of n1 and n2, take the longest and verify if it will pass in r
  */
 	while (n1[i])
-	{
 		i++;
-	}
 	while (n2[j])
-	{
 		j++;
-	}
 	if (i >= j)
-	{
 		lenght = i;
-	}
 	else
-	{
 		lenght = j;
-	}
 	if (lenght > size_r)
-	{
 		return (0);
-	}
 /*
  * sum of character and retenue on k+1
  */
-	while(k < size_r)
+	while (k < size_r)
 	{
 		if (i > 0)
-		{
 			sum += n1[i - 1] - 48;
-		}
 		if (j > 0)
-		{
 			sum += n2[j - 1] - 48;
-		}
 		retenue = r[k];
 		r[k] = (sum % 10) + retenue + 48;
 		r[k + 1] = (sum / 10) + 48;
