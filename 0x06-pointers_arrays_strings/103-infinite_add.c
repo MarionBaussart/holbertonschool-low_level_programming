@@ -2,27 +2,6 @@
 #include <stdio.h>
 
 /**
- * reverse_array - reverses an array
- * @a: array of integers
- * @n : size of array
- */
-
-void reverse_array(int *a, int n)
-{
-	int index = 0;
-	int value;
-
-	while (index < n)
-	{
-		value = a[index];
-		a[index] = a[n - 1];
-		a[n - 1] = value;
-		index++;
-		n--;
-	}
-}
-
-/**
  * infinite_add - adds two numbers
  * @n1: first string of number
  * @n2: second string of number
