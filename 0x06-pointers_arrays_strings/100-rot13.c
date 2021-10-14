@@ -21,7 +21,7 @@ char *rot13(char *str)
 			if (str[i] == letter[j])
 			{
 				str[i] = yrggre[j];
-                break;
+				break;
 			}
 			j++;
 		}
