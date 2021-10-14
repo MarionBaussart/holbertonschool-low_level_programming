@@ -2,16 +2,16 @@
 #include <stdio.h>
 
 /**
- * leet - encodes a string into 1337
+ * rot13 - encodes a string using rot13
  * @str: string of character
  * Return: str
  */
 
-char *leet(char *str)
+char *rot13(char *str)
 {
 	int i = 0, j = 0;
-	char letter[11] = "aAeEoOtTlL";
-	char number[11] = "4433007711";
+	char letter[53] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char yrggre[53] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	while (str[i])
 	{
@@ -20,7 +20,7 @@ char *leet(char *str)
 		{
 			if (str[i] == letter[j])
 			{
-				str[i] = number[j];
+				str[i] = yrggre[j];
 			}
 			j++;
 		}
