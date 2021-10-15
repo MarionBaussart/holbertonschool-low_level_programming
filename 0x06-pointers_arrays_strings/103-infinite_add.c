@@ -12,7 +12,7 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0, j = 0, lenght = 0, k = 0, l = 0, value = 0, sum, retenue;
+	int i = 0, j = 0, lenght = 0, k = 0, l = 0, value = 0, sum = 0, retenue = 0;
 
 /*
  * counting size of n1 and n2, take the longest and verify if it will pass in r
@@ -25,20 +25,22 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		lenght = i;
 	else
 		lenght = j;
-	if (lenght > size_r)
+	if (lenght + 1 >= size_r)
 		return (0);
 /*
  * sum of character and retenue on k+1
  */
-	while (k < size_r)
+	while (k < size_r - 1)
 	{
+		sum = retenue;
 		if (i > 0)
 			sum += n1[i - 1] - 48;
 		if (j > 0)
 			sum += n2[j - 1] - 48;
-		retenue = r[k];
-		r[k] = (sum % 10) + retenue + 48;
-		r[k + 1] = (sum / 10) + 48;
+		if (i < 0 && j < 0 && sum == 0)
+			break;
+		r[k] = (sum % 10) + 48;
+		retenue = (sum / 10);
 		i--;
 		j--;
 		k++;
@@ -46,6 +48,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 /*
  * reverse array
  */
+
 	while (l < k)
 	{
 		value = r[l];
@@ -54,5 +57,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		l++;
 		k--;
 	}
+	r[l] = '\0';
 	return (r);
 }
