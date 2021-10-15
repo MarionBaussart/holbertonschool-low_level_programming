@@ -44,12 +44,13 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		i--;
 		j--;
 		k++;
+		r[k] = '\0';
 	}
 /*
  * reverse array
  */
 
-	while (l < k)
+	while (l < k - 1)
 	{
 		value = r[l];
 		r[l] = r[k - 1];
@@ -57,6 +58,5 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		l++;
 		k--;
 	}
-	r[l] = '\0';
 	return (r);
 }
