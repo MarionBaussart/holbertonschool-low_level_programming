@@ -37,7 +37,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			sum += n1[i - 1] - 48;
 		if (j > 0)
 			sum += n2[j - 1] - 48;
-		if (i < 0 && j < 0 && sum == 0)
+		if (i <= 0 && j <= 0 && sum == 0)
 			break;
 		r[k] = (sum % 10) + 48;
 		retenue = (sum / 10);
