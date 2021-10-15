@@ -39,24 +39,17 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			sum += n2[j - 1] - 48;
 		if (i <= 0 && j <= 0 && sum == 0)
 			break;
-		r[k] = (sum % 10) + 48;
-		retenue = (sum / 10);
-		i--;
-		j--;
-		k++;
+		r[k] = (sum % 10) + 48, retenue = (sum / 10), i--, j--, k++;
 		r[k] = '\0';
 	}
 /*
  * reverse array
  */
-
 	while (l < k - 1)
 	{
 		value = r[l];
 		r[l] = r[k - 1];
-		r[k - 1] = value;
-		l++;
-		k--;
+		r[k - 1] = value, l++, k--;
 	}
 	return (r);
 }
