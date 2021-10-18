@@ -10,21 +10,12 @@
 
 void print_diagsums(int *a, int size)
 {
-	int row = 0, column = 0, sum1 = 0, sum2 = 0;
-
-	while (row < size)
+	int i = 0, sum1 = 0, sum2 = 0;
+	while (i < size)
 	{
-		sum1 += *((a + row) + column);
-		row++;
-		column++;
-	}
-	row = 0;
-	column = size - 1;
-	while (row < size && column >= 0)
-	{
-		sum2 += *((a + row) + column);
-		row++;
-		column--;
+		sum1 += *(a + (size * i) + i);
+		sum2 += *(a + size + (size * i) - (i + 1));
+		i++;
 	}
 	printf("%d, %d\n", sum1, sum2);
 }
