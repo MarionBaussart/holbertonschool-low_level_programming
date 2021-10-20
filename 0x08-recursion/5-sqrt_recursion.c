@@ -2,9 +2,10 @@
 #include <stdio.h>
 
 /**
- * _square - returns the value i * i
+ * _square - search the square equal to n
  * @n: number
- * Return: x^y, if y < 0 its return -1
+ * @i: square
+ * Return: i, otherwise -1
  */
 
 int _square(int n, int i)
