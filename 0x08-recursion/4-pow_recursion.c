@@ -5,7 +5,7 @@
  * _pow_recursion - returns the value of x raised to the power of y
  * @x: number
  * @y: power
- * Return: n!, if n < 0 its return -1
+ * Return: x^y, if y < 0 its return -1
  */
 
 int _pow_recursion(int x, int y)
