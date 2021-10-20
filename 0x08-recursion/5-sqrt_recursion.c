@@ -10,11 +10,11 @@
 
 int _square(int n, int i)
 {
-	if (i > 0)
+	if (i < n)
 	{
 		if (i * i != n)
 		{
-			i = _square(n, i - 1);
+			i = _square(n, i + 1);
 		}
 	}
 	else
@@ -30,7 +30,7 @@ int _square(int n, int i)
 
 int _sqrt_recursion(int n)
 {
-	int i = n;
+	int i = 0;
 
 	if (n < 0)
 	{
