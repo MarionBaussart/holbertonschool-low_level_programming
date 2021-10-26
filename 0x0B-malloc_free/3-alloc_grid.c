@@ -20,10 +20,15 @@ int **alloc_grid(int width, int height)
 
 	tab = malloc(sizeof(int) * height);
 	for (i = 0; i < height; i++)
-		tab[i] = malloc(sizeof(int) * width);
+		tab[i] = malloc(sizeof(int *) * width);
 
 	if (tab == NULL)
+	{
+		free(tab);
+		for (i = 0; i < height; i++)
+			free(tab[i]);
 		return (NULL);
+	}
 
 	while (h < height)
 	{
@@ -37,5 +42,4 @@ int **alloc_grid(int width, int height)
 	}
 
 	return (tab);
-	free (tab);
 }
