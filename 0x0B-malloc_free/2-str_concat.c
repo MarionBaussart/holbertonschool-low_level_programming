@@ -19,31 +19,6 @@ int _strlen(char *s)
 }
 
 /**
- * _strcat - concatenates two strings
- * @dest: string 1
- * @src: string 2
- * Return: dest
- */
-
-char *_strcat(char *dest, char *src)
-{
-	int i = 0, j = 0;
-
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-/**
  * str_concat - concatenates two strings
  * @s1: string one
  * @s2: string two
@@ -54,8 +29,9 @@ char *_strcat(char *dest, char *src)
 
 char *str_concat(char *s1, char *s2)
 {
-	char *newstring;
+	char *newstring = NULL;
 	int length_s1, length_s2;
+	int i = 0;
 
 	if (s1 == NULL)
 		length_s1 = 0;
@@ -66,16 +42,22 @@ char *str_concat(char *s1, char *s2)
 	else
 		length_s2 = _strlen(s2);
 
-	newstring = malloc(length_s1 + length_s2 + 1);
+	newstring = malloc(sizeof (char) * (length_s1 + length_s2 + 1));
 	if (newstring == NULL)
 		return (NULL);
 
-	if (s1 != NULL && s2 != NULL)
-		_strcat(_strcat(newstring, s1), s2);
-	else if (s1 == NULL)
-		_strcat(newstring, s2);
-	else if (s2 == NULL)
-		_strcat(newstring, s1);
+	while (i < length_s1)
+	{
+		newstring[i] = s1[i];
+		i++;
+	}
+	i = 0;
+	while (i < length_s2)
+	{
+		newstring[length_s1] = s1[i];
+		length_s1++;
+		i++;
+	}
 
 	return (newstring);
 }
