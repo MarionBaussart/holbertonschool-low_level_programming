@@ -42,7 +42,7 @@ char *str_concat(char *s1, char *s2)
 	else
 		length_s2 = _strlen(s2);
 
-	newstring = malloc(sizeof (char) * (length_s1 + length_s2 + 1));
+	newstring = malloc(sizeof(char) * (length_s1 + length_s2 + 1));
 	if (newstring == NULL)
 		return (NULL);
 
@@ -54,8 +54,7 @@ char *str_concat(char *s1, char *s2)
 	i = 0;
 	while (i < length_s2)
 	{
-		newstring[length_s1] = s1[i];
-		length_s1++;
+		newstring[length_s1 + i] = s2[i];
 		i++;
 	}
 
