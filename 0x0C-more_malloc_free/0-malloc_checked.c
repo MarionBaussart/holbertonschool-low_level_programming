@@ -3,7 +3,10 @@
 
 /**
  * malloc_checked - allocates memory
+ * exit is the same as return but we can't use return because 98 is an int
+ * malloc should return a pointer
  * @b: size allocate
+ * Return: a pointer
  */
 
 void *malloc_checked(unsigned int b)
