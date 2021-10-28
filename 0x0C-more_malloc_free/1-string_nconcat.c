@@ -32,26 +32,30 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *newstring = NULL;
 	unsigned int i = 0, j = 0;
+	unsigned int length_s1, length_s2;
+
+	length_s1 = s1 == NULL ? 0 : _strlen(s1);
+	length_s2 = s2 == NULL ? 0 : _strlen(s2);
+	length_s2 = n > length_s2 ? length_s2 : n;
 
 /* allocate memory */
-	newstring = malloc(sizeof(char) * (_strlen(s1) + n + 1));
+	newstring = malloc(sizeof(char) * (length_s1 + length_s2 + 1));
 	if (newstring == NULL)
 		return (NULL);
 
 /* concatenates two strings */
-	while (i < _strlen(s1))
+	while (i < length_s1)
 	{
 		newstring[i] = s1[i];
 		i++;
 	}
-	while (j < n)
+	while (j < length_s2)
 	{
 		newstring[i] = s2[j];
 		i++;
 		j++;
 	}
-	if (_strlen(s2) > n)
-		newstring[i] = '\0';
+	newstring[i] = '\0';
 
 	return (newstring);
 }
