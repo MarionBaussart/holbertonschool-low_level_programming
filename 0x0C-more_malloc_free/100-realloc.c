@@ -2,23 +2,6 @@
 #include <stdlib.h>
 
 /**
- * _strlen - returns the length of a string
- * @s: string of character
- * Return: i, number of character
- */
-
-unsigned int _strlen(char *s)
-{
-	unsigned int i = 0;
-
-	while (*(s + i) != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-/**
  * _memcpy - copies memory area of src to dest, from + number until n
  * @dest: name of buffer receveur
  * @src: name of buffer that we copy
@@ -49,7 +32,6 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *newptr = NULL;
-	unsigned int i = 0;
 
 /* return conditions */
 	if (new_size == old_size)
@@ -68,20 +50,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 /* copy ptr in newprt */
 	if (new_size > old_size)
-	{
-		while (i < old_size)
-		{
-			_memcpy(newptr, ptr, old_size);
-			i++;
-		}
-	}
+		_memcpy(newptr, ptr, old_size);
 	else if (new_size < old_size)
-	{
-		while (i < new_size)
-		{
-			_memcpy(newptr, ptr, new_size);
-			i++;
-		}
-	}
+		_memcpy(newptr, ptr, new_size);
+	free (ptr);
 	return (newptr);
 }
