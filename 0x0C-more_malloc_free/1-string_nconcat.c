@@ -34,22 +34,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i = 0, j = 0;
 
 /* allocate memory */
-	newstring = malloc(sizeof(char) * (_strlen(s1) + n + 1));
+/*	if (_strlen(s2) > n) */
+		newstring = malloc(sizeof(char) * (_strlen(s1) + n + 1));
 	if (newstring == NULL)
 		return (NULL);
 
-	if (s1 == NULL)
-		s1[i] = '\0';
-	if (s2 == NULL)
-		s2[i] = '\0';
-
 /* concatenates two strings */
-	while (i < _strlen(s1) && s1[i])
+	while (i < _strlen(s1))
 	{
 		newstring[i] = s1[i];
 		i++;
 	}
-	while (j < n && s2[j])
+	while (j < n)
 	{
 		newstring[i] = s2[j];
 		i++;
