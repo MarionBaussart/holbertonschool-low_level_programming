@@ -51,8 +51,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i++;
 		j++;
 	}
-	if (_strlen(s2) > n)
-		newstring[i] = '\0';
+	newstring[i] = '\0';
 
 	return (newstring);
 }
