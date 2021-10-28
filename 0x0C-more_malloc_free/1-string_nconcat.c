@@ -39,7 +39,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 /* concatenates two strings */
-	while (i < _strlen(s1))
+	while (i < _strlen(s1) && s1[i])
 	{
 		newstring[i] = s1[i];
 		i++;
