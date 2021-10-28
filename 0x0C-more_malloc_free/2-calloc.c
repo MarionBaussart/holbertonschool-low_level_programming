@@ -17,12 +17,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 /* allocate memory */
-	array = malloc(size * nmemb + 1);
+	array = malloc(size * nmemb);
 	if (array == NULL)
 		return (NULL);
 
 /* memory set to 0 */
-	while (i < nmemb - 1)
+	while (i < nmemb * size)
 	{
 		array[i] = 0;
 		i++;
