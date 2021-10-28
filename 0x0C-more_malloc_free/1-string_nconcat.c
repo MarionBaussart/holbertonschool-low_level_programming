@@ -31,15 +31,10 @@ unsigned int _strlen(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *newstring = NULL;
-	unsigned int i = 0, j = 0, length_s2_n;
+	unsigned int i = 0, j = 0;
 
 /* allocate memory */
-	if (_strlen(s2) > n)
-		length_s2_n = n;
-	else
-		length_s2_n = _strlen(s2);
-
-	newstring = malloc(sizeof(char) * (_strlen(s1) + length_s2_n + 1));
+	newstring = malloc(sizeof(char) * (_strlen(s1) + n + 1));
 	if (newstring == NULL)
 		return (NULL);
 
