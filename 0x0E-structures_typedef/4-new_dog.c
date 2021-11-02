@@ -2,6 +2,23 @@
 #include <stdlib.h>
 
 /**
+ * _strlen - returns the length of a string
+ * @s: string of character
+ * Return: i, number of character
+ */
+
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (*(s + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+/**
  * new_dog - creates a new dog
  * @name: name of the dog
  * @age: age of the dog
@@ -17,18 +34,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 	newdog = malloc(sizeof(dog_t));
 	if (newdog == NULL)
 	{
-		free(newdog);
 		return (NULL);
 	}
 
-	newdog->name = malloc(sizeof(newdog->name + 1));
+	if (newdog->name == name)
+		newdog->name = malloc(sizeof(char) * _strlen(name) + 1);
 	if (newdog->name == NULL)
 	{
 		free(newdog);
 		return (NULL);
 	}
 
-	newdog->owner = malloc(sizeof(newdog->owner + 1));
+	if (newdog->owner == owner)
+	newdog->owner = malloc(sizeof(char) * _strlen(owner) + 1);
 	if (newdog->owner == NULL)
 	{
 		free(newdog->name);
