@@ -17,15 +17,18 @@ int main(int argc, char **argv)
 
 	if (argc == 4)
 	{
-		num1 = atoi(argv[1]);
-		num2 = atoi(argv[3]);
-		operator = argv[2];
+		num1 = atoi(argv[1]), num2 = atoi(argv[3]), operator = argv[2];
 /* divide by 0 */
 		if ((strcmp(operator, "/") == 0 || argv[2][0] == '%')
 				&& (num2 == 0))
 		{
 			printf("Error\n");
 			exit(100);
+		}
+		if (strlen(operator) > 1)
+		{
+			printf("Error\n");
+			exit(99);
 		}
 /* pointer op sur function get op to identifie if the operator is correct */
 		op = get_op_func(operator);
@@ -36,7 +39,7 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			result = (get_op_func(operator))(num1, num2);
+			result = get_op_func(operator)(num1, num2);
 			printf("%d\n", result);
 		}
 	}
