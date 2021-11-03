@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 			printf("Error\n");
 			exit(100);
 		}
-		if (strlen(operator) > 0)
+		if (strlen(operator) > 1)
 		{
 			printf("Error\n");
 			exit(99);
