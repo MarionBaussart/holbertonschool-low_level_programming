@@ -25,14 +25,9 @@ int main(int argc, char **argv)
 			printf("Error\n");
 			exit(100);
 		}
-		if (strlen(operator) > 1)
-		{
-			printf("Error\n");
-			exit(99);
-		}
 /* pointer op sur function get op to identifie if the operator is correct */
 		op = get_op_func(operator);
-		if (op == NULL)
+		if (op == NULL || strlen(operator) > 1)
 		{
 			printf("Error\n");
 			exit(99);
