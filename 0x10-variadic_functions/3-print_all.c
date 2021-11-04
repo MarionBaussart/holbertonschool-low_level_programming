@@ -74,7 +74,7 @@ void print_all(const char * const format, ...)
 /* parcourir the list which the last argument is format */
 	va_start(list, format);
 
-	while (format[i] && format)
+	while (format && format[i])
 	{
 		while (list_format[j].tf != NULL)
 		{
@@ -90,4 +90,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
+	va_end(list);
 }
