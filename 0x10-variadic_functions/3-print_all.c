@@ -37,7 +37,7 @@ void print_float(va_list list)
 }
 
 /**
- * print_chars - print a string
+ * print_string - print a string
  * @list: thing to print
  * Return: No return.
  */
