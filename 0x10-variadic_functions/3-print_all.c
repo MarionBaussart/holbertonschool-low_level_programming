@@ -5,7 +5,7 @@
 
 /**
  * print_char - print a char
- * @c: char
+ * @list: thing to print
  * Return: No return.
  */
 
@@ -16,7 +16,7 @@ void print_char(va_list list)
 
 /**
  * print_integer - print an integer
- * @i: integer
+ * @list: thing to print
  * Return: No return.
  */
 
@@ -27,7 +27,7 @@ void print_integer(va_list list)
 
 /**
  * print_float - print a float
- * @f: float
+ * @list: thing to print
  * Return: No return.
  */
 
@@ -38,7 +38,7 @@ void print_float(va_list list)
 
 /**
  * print_chars - print a string
- * @s: string
+ * @list: thing to print
  * Return: No return.
  */
 
