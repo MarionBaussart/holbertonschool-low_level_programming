@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	while (i < nbytes)
 	{
 		opcode = *(unsigned char *)f;
-		printf("%.2x", opcode);
+		printf("%02x", opcode);
 
 		if (i != nbytes - 1)
 			printf(" ");
