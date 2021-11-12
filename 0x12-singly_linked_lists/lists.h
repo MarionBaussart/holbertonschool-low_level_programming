@@ -7,7 +7,8 @@
  * struct singly_linked_list - singly_linked_list
  *
  * @str: string
- * @nfunc: name of the function to use
+ * @len: length of the string
+ * @next: name of the next struct linked
  */
 typedef struct singly_linked_list
 {
