@@ -5,15 +5,15 @@
 #include <string.h>
 
 /**
- * add_node - adds a new node at the beginning of a list_t list
+ * add_node_end - adds a new node at the end of a list_t list
  * @head: singly list to print
  * @str: new string to add to head
  * Return: address of the new element, or NULL if it failed
  */
 
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new, *first;
+	list_t *new, *last;
 	int i = 0;
 
 	new = malloc(sizeof(list_t));
@@ -30,15 +30,16 @@ list_t *add_node(list_t **head, const char *str)
 
 	new->str = strdup(str);
 	new->len = i;
+	new->next = NULL;
 
-	if (*head == NULL)
-		*head = new;
-	else
+	last = *head;
+	while (last->next != NULL)
 	{
-		first = *head;
-		*head = new;
-		new->next = first;
+		last = last->next;
 	}
+	last->next = new;
+
+	*head = new;
 
 	return (*head);
 }
