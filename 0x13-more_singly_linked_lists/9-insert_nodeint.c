@@ -5,8 +5,10 @@
 #include <string.h>
 
 /**
- * insert_nodeint_at_index - function that inserts a new node at a given position
+ * insert_nodeint_at_index - function that inserts a new node at
+ * a given position
  * @head: singly list
+ * @idx: position for add the new node
  * @n: new int to add to head
  * Return: the address of the new node, or NULL if it failed
  */
@@ -33,10 +35,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	while (i < idx)
 	{
-		next_node = next_node->next;
+		prev_node = next_node;
 		i++;
-		if (i < idx)
-			prev_node = next_node;
+		next_node = next_node->next;
 	}
 
 	prev_node->next = new_node;
