@@ -31,6 +31,6 @@ listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
 int detect_loop(const listint_t *head, const listint_t *current, int index);
 size_t free_listint_safe(listint_t **h);
-int detect_lfree(listint_t **h, listint_t *current, int index);
+void delete_loop(listint_t *head);
 
 #endif

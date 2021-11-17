@@ -13,43 +13,44 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *current = *h, *tmp;
-    size_t nbnode = 0;
+	listint_t *tmp;
+	size_t nbnode = 0;
 
-    while (current)
+	delete_loop(*h);
+
+	while (*h)
 	{
-		tmp = current;
-        nbnode++;
-        current = current->next;
-        if (detect_lfree(h, current, nbnode) != 0)
-		{
-            free (tmp);
+		tmp = *h;
+		nbnode++;
+		*h = (*h)->next;
+		free(tmp);
+	}
 
-			break;
-		}
-        free (tmp);
-    }
-    current = NULL;
-    *h = current;
+	*h = NULL;
 
 	return (nbnode);
 }
 
-
 /**
- * detect_lfree - detect if they are a loop in head
- * @h: singly list to print
- * @current: current node to check
- * @index: number of nodes we have to check
- * Return: 0 if no loop
+ * delete_loop - delete the loop
+ * @head: singly list to print
+ * Return: No return
  */
 
-int detect_lfree(listint_t **h, listint_t *current, int index)
+void delete_loop(listint_t *head)
 {
-	while (*h != current)
+	listint_t *next = head, *prev = head;
+	int index = 0;
+
+	while (next)
 	{
-		*h = (*h)->next;
-		index--;
+		next = next->next;
+		index++;
+		if (detect_loop(head, next, index) != 0)
+		{
+			prev->next = NULL;
+			break;
+		}
+		prev = prev->next;
 	}
-	return (index);
 }
