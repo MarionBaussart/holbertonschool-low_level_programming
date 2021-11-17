@@ -11,7 +11,7 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t nbnode = 0;
-	listint_t *current = head;
+	const listint_t *current = head;
 
 	if (head == NULL)
 	{
@@ -42,7 +42,7 @@ size_t print_listint_safe(const listint_t *head)
  * Return: 0 if no loop
  */
 
-int detect_loop(listint_t *head, listint_t *current, int index)
+size_t detect_loop(const listint_t *head, const listint_t *current, size_t index)
 {
 	while (head != current)
 	{
