@@ -20,10 +20,10 @@ listint_t *find_listint_loop(listint_t *head)
 		while (start != search && start != search->next)
 		{
 			start = start->next;
-			if (start == search->next)
-			{
-				return (start);
-			}
+		}
+		if (start == search->next)
+		{
+			return (start);
 		}
 		search = search->next;
 		start = head;
