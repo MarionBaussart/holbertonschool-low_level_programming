@@ -47,11 +47,13 @@ int _pow_recursion(int x, int y)
 
 unsigned int binary_to_uint(const char *b)
 {
-	int length = _strlen(b), exp = 0;
+	int length, exp = 0;
 	unsigned int uintnum = 0;
 
 	if (b == NULL)
 		return (0);
+
+	length = _strlen(b);
 
 	while (length > 0)
 	{
