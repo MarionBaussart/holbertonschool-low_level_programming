@@ -12,28 +12,28 @@ int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long int bit = *n;
 
-    if (index > 32)
-        return (-1);
+	if (index > 32)
+		return (-1);
 
-    if (index == 0)
-    {
-        if ((*n & 1) == 0)
-            *n = *n + 1;
-        else
-            return (-1);      
-    }
+	if (index == 0)
+	{
+		if ((*n & 1) == 0)
+			*n = *n + 1;
+		else
+			return (-1);
+	}
 
-    else
-    {
-        bit = bit >> index;
+	else
+	{
+		bit = bit >> index;
 
-        if ((bit & 1) == 0)
-        {
-            bit = bit + 1;
-            bit = bit << index;
-            *n = *n | bit;
-        }
-    }
+		if ((bit & 1) == 0)
+		{
+			bit = bit + 1;
+			bit = bit << index;
+			*n = *n | bit;
+		}
+	}
 
 	return (1);
 }
