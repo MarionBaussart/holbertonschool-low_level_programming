@@ -9,28 +9,7 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int num = n, exp = 1, i = 0;
-
-/* choose the power of 2 max */
-	while (num > exp)
-		exp = exp * 2;
-
-	while (n != 0)
-	{
-		if (n >= exp)
-		{
-			_putchar('1');
-			n = n - exp;
-			i++;
-		}
-		else
-			if (i > 0)
-			_putchar('0');
-		exp = exp / 2;
-	}
-	while (exp > 0)
-	{
-		_putchar('0');
-		exp = exp / 2;
-	}
+	if (n > 1)
+		print_binary(n >> 1);
+	_putchar(n & 1 ? '1' : '0');
 }
