@@ -28,7 +28,9 @@ int main(int ac, char **av)
 		exit(98);
 	}
 /* open file_to, create if doesn't exist and write */
-	file_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	file_to = open(av[2], O_WRONLY | O_TRUNC);
+	if (file_to == -1)
+		file_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	write_return = write(file_to, buf, read_return);
 	if (file_to == -1 || write_return == -1)
 	{
