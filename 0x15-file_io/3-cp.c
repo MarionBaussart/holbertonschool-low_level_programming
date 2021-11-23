@@ -44,8 +44,9 @@ int main(int ac, char **av)
 
 /**
  * exit_procedure - procedure for writting the exit message
- * @ac: number of arguments
- * @av: list of the arguments
+ * @code: number of arguments
+ * @fd: file descriptor
+ * @av: list of arguments
  * Return: no return
  */
 
