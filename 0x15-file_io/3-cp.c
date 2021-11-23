@@ -21,8 +21,14 @@ int main(int ac, char **av)
 	}
 /* open file_from and read */
 	file_from = open(av[1], O_RDONLY);
+
+	if (file_from == -1 || av[1] == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
 	read_return = read(file_from, buf, 1024);
-	if (file_from == -1 || read_return == -1 || av[1] == NULL)
+	if (read_return == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
