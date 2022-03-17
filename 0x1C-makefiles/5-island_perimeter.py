@@ -15,23 +15,22 @@ def island_perimeter(grid):
     """
     perimeter = 0
     counter_case = 0
-    for height in range(len(grid)):
-        for width in range(len(grid[height])):
+    for h in range(len(grid)):
+        for w in range(len(grid[h])):
             counter_cote = 4
             cote = 0
-            if grid[height][width] == 1:
+            if grid[h][w] == 1:
                 counter_case += 1
-                if grid[height - 1][width] and grid[height - 1][width] == 1:
+                if grid[h - 1][w] and grid[h - 1][w] == 1:
                     counter_cote -= 1
                     cote += 1
-                if (width + 1) < len(grid[height]) and
-                grid[height][width + 1] == 1:
+                if (w + 1) < len(grid[h]) and grid[h][w + 1] == 1:
                     counter_cote -= 1
                     cote += 1
-                if (height + 1) < len(grid) and grid[height + 1][width] == 1:
+                if (h + 1) < len(grid) and grid[h + 1][w] == 1:
                     counter_cote -= 1
                     cote += 1
-                if width - 1 >= 0 and grid[height][width - 1] == 1:
+                if w - 1 >= 0 and grid[h][w - 1] == 1:
                     counter_cote -= 1
                     cote += 1
                 if cote != 0:
