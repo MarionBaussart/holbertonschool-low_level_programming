@@ -1,3 +1,7 @@
 *
 !*Makefile
 !*.md
+!*.py
+*.c
+*.o
+*main.py
