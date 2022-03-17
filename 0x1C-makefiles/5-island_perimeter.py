@@ -30,11 +30,11 @@ def island_perimeter(grid):
                 if (height + 1) < len(grid) and grid[height + 1][width] == 1:
                     counter_cote -= 1
                     cote += 1
-                if grid[height][width - 1] and grid[height][width - 1] == 1:
+                if width - 1 >= 0 and grid[height][width - 1] == 1:
                     counter_cote -= 1
                     cote += 1
                 if cote != 0:
                     perimeter += counter_cote
                 elif counter_case == 1:
                     return 4
-    return perimeter + 1
+    return perimeter
