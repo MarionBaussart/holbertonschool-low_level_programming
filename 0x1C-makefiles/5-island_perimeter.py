@@ -17,14 +17,20 @@ def island_perimeter(grid):
     for height in range(len(grid)):
         for width in range(len(grid[height])):
             counter_cote = 4
+            cote = 0
             if grid[height][width] == 1:
                 if grid[height - 1][width] and grid[height - 1][width] == 1:
                     counter_cote -= 1
+                    cote += 1
                 if grid[height][width + 1] and grid[height][width + 1] == 1:
                     counter_cote -= 1
+                    cote += 1
                 if grid[height + 1][width] and grid[height + 1][width] == 1:
                     counter_cote -= 1
+                    cote += 1
                 if grid[height][width - 1] and grid[height][width - 1] == 1:
                     counter_cote -= 1
-                perimeter += counter_cote
+                    cote += 1
+                if cote != 0:
+                    perimeter += counter_cote
     return perimeter
