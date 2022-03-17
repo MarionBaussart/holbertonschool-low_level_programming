@@ -36,5 +36,5 @@ def island_perimeter(grid):
                 if cote != 0:
                     perimeter += counter_cote
                 elif counter_case == 1:
-                    perimeter = 4
-    return perimeter
+                    return 4
+    return perimeter + 1
