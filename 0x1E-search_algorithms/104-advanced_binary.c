@@ -57,21 +57,21 @@ int new_array(size_t begin, size_t end, int value, int *array)
 	if (begin == end && array[begin] != value)
 		return (-1);
 
-    print_array(array, begin, end);
+	print_array(array, begin, end);
 
-    if (begin == end && array[begin] != value)
+	if (begin == end && array[begin] != value)
 		return (-1);
 
 	if (array[middle] < value && begin != end)
-        return (new_array(middle + 1, end, value, array));
+		return (new_array(middle + 1, end, value, array));
 
 	if (array[middle] > value)
 		return (new_array(begin, middle, value, array));
 
-    if (array[middle] == value && array[middle - 1] != value)
-        return (middle);
+	if (array[middle] == value && array[middle - 1] != value)
+		return (middle);
 
-    if (array[middle] == value && array[middle - 1] == value)
+	if (array[middle] == value && array[middle - 1] == value)
 		return (new_array(begin, middle + 1, value, array));
 
 	return (-1);
