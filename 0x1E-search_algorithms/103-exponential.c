@@ -18,6 +18,9 @@ int exponential_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
+	if (array[0] == value)
+		return (0);
+
 	while (index < size && array[index] < value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", index, array[index]);
@@ -82,10 +85,11 @@ int new_array(size_t begin, size_t end, int value, int *array)
 	size_t middle;
 
 	middle = ((end - begin) / 2) + begin;
-	if (begin == end && array[middle] != value)
-		return (-1);
 
 	print_array(array, begin, end);
+
+	if (begin == end && array[middle] != value)
+		return (-1);
 
 	if (array[middle] == value)
 		return (middle);
