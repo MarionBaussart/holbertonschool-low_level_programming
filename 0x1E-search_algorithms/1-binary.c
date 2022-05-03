@@ -52,7 +52,7 @@ int new_array(size_t begin, size_t end, int value, int *array)
 {
 	size_t middle;
 
-	middle = ((end - 1 - begin) / 2 ) + begin;
+	middle = ((end - 1 - begin) / 2) + begin;
 	if (begin == end && array[middle] != value)
 		return (-1);
 
