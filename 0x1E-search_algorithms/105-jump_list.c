@@ -16,20 +16,20 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	size_t jump_step = sqrt(size);
 	size_t index = 0;
 	size_t j, last;
-    listint_t *tmp = list;
+	listint_t *tmp = list;
 
 	if (list == NULL)
 		return (NULL);
 
-    while (index < size && tmp->n < value)
-    {
+	while (index < size && tmp->n < value)
+	{
 		index += jump_step;
-        while (tmp->index < index && tmp->next)
-            tmp = tmp->next;
-        printf("Value checked array[%ld] = [%d]\n", index, tmp->n);
-    }
+		while (tmp->index < index && tmp->next)
+			tmp = tmp->next;
+		printf("Value checked array[%ld] = [%d]\n", index, tmp->n);
+	}
 
-    if (index >= size)
+	if (index >= size)
 		last = size - 1;
 	else
 	{
@@ -42,8 +42,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	while (j <= last && j < size)
 	{
 		while (list->index < j)
-            list=list->next;
-        printf("Value checked array[%ld] = [%d]\n", j, list->n);
+			list = list->next;
+		printf("Value checked array[%ld] = [%d]\n", j, list->n);
 		if (list->n == value)
 			return (list);
 		j++;
