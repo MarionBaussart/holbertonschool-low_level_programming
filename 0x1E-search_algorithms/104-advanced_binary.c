@@ -54,7 +54,7 @@ int new_array(size_t begin, size_t end, int value, int *array)
 
 	middle = ((end - 1 - begin) / 2) + begin;
 
-	if (begin == end && array[begin] != value)
+	if (begin - end == 0)
 		return (-1);
 
 	print_array(array, begin, end);
