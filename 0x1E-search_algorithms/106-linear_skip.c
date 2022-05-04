@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * jump_list - function that searches for a value in a sorted list
+ * linear_skip - function that searches for a value in a sorted list
  * of integers using the Jump search algorithm
  * jump step : square root of the size of the array
  * @list: pointer to the head of the skip list to search in
@@ -12,40 +12,36 @@
 
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	skiplist_t *tmp = list;
-    skiplist_t *len = list;
-    size_t j, last, index = 0, lenght = 0;
-    size_t jump_step;
-    
-    if (list == NULL)
+	skiplist_t *tmp = list, *len = list;
+	size_t j, last, jump_step, index = 0, lenght = 0;
+
+	if (list == NULL)
 		return (NULL);
-        
-    /* length of the list */
-    while (len)
-    {
-        lenght++;
-        len = len->next;
-    }
-    jump_step = sqrt(lenght);
 
-    while (index < lenght && tmp->n < value)
-    {
-        index += jump_step;
-        if (tmp->express)
-        {
-            tmp = tmp->express;
-            printf("Value checked at index [%ld] = [%d]\n", tmp->index, tmp->n);
-        }
-    }
+	/* length of the list */
+	while (len)
+	{
+		lenght++;
+		len = len->next;
+	}
+	jump_step = sqrt(lenght);
 
-    if (index >= lenght)
+	while (index < lenght && tmp->n < value)
+	{
+		index += jump_step;
+		if (tmp->express)
+		{
+			tmp = tmp->express;
+			printf("Value checked at index [%ld] = [%d]\n", tmp->index, tmp->n);
+		}
+	}
+
+	if (index >= lenght)
 		last = lenght - 1;
 	else
 		last = index;
-
 	j = index - jump_step;
 	printf("Value found between indexes [%ld] and [%ld]\n", j, last);
-
 	while (j <= last && j < lenght)
 	{
 		while (list->index < j)
@@ -55,6 +51,5 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			return (list);
 		j++;
 	}
-
 	return (NULL);
 }
