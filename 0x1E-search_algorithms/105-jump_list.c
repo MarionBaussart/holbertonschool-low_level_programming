@@ -4,7 +4,7 @@
  * jump_list - function that searches for a value in a sorted list
  * of integers using the Jump search algorithm
  * jump step : square root of the size of the array
- * @array: pointer to the first element of the array to search in
+ * @list: pointer to the first element of the array to search in
  * @size: number of elements in array
  * @value: value to search for
  * Return: index where value is located,
